@@ -2,6 +2,9 @@ image:https://github.com/HOME-programming-lab/SP2022Group3/actions/workflows/mav
 
 = Möbelhausmanagementprojekt- spitzenklassesoftware (MHMPS)
 
+Dies ist eine persönliche Kopie des Gruppenprojekts, die ursprünglich auf https://github.com/HOME-programming-lab/SP2022Group3/actions veröffentlicht wurde, jetzt aber auf privat eingestellt ist.
+
+
 Die Möbel-Hunger-Kette möchte das frisch erworbene Unternehmen Möbel-Hier mit einer Software für Bestellverwaltung, Lagerhaltung und Auslieferung ausstatten. Diese trägt den Arbeitstitel MHMPS (Möbelhausmanagementprojektspitzenklassesoftware).
 
 Kunden können aus einem Katalog einzelne Möbel oder Möbel-Kombinationen aus Einzelmöbeln oder Möbelteilen (Bundles) wählen. Ihre Bestellungen werden am Telefon von einem Mitarbeiter entgegengenommen und in der Bestellverwaltung abgelegt. Für die zügige Belieferung der Kunden unterhält Möbel-Hier ein Lager, das ebenfalls durch MHMPS verwaltet werden soll. Für die Auslieferung kann der Kunde zwischen Selbstabholung mit eigenem oder von Möbel-Hier geliehenem LKW oder Anlieferung durch Möbel-Hier wählen. Für die Geschäftsführung soll ein Überblic über die Möbelverkäufe einzelner Lieferanten im monatlichen Vergleich erstellt werden.
