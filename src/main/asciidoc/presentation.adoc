@@ -1,0 +1,36 @@
+== toDO
+
+wessen Laptop verwenden wir?
+Datenbank befüllen (entweder per Initializer oder auf Präsentationsrechner), denn: LIveDemo leerer Tabelln ist creepy
+wer erstellt PowerpoinT?
+ 
+==   Wer sind Sie: Teamvorstellung
+ 
+Anas, Lee, Robert, Thomas + 2*RIP
+
+==   Überblick über die Teilergebnisse der Einarbeitungs-, Analyse-, Entwurfs- und Implementierungsphase
+
+Dokumente wurden erstellt und danach nie wieder angeschaut
+  
+==   Ihr Vorgehen beim Software-Test (z.B. Unit-Tests, Integrationstests, Cross-Testing)
+
+keine Tests
+  
+==    Interessante Zahlen und Fakten zum Projekt (z.B. Code-Statistik, Anzahl der Testfälle, Anzahl Anforderungen, Erfüllungsgrad)
+
+thomas sucht nachher noch ein paar statistiken raus
+
+
+
+==    Wie haben Sie Ihre Teamarbeit organisiert? Was, denken Sie, lief besonders gut? Wo besteht noch Verbesserungspotential?
+
+Discord, gelegentliche Treffen
+  
+==    Wie fanden Sie die verwendeten Technologien?
+
+wir haben Technologien verwendet? ^^
+sind bestimmt toll, wenn man sie denn mal verstanden hat
+  
+==    Was sind Ihre lessons learned, was würden Sie vielleicht anders (besser?) machen?
+
+==    Live-Demo Ihrer Software

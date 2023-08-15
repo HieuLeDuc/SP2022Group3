@@ -1,0 +1,61 @@
+// Bogen den Sie für das Cross-Testing verwenden können
+
+= Cross-Testing Feedback
+
+__Durchführende Gruppe:__3
+
+__Anwendung von Gruppe:__4
+
+== Getestetes System
+Die Anwendung ermöglicht Kunden, aus dem Angebot der exklusiven Golfanlage "Golfers Paradise" Produkte und Dienstleitungen zu erwerben, und den Mitarbeitern und Managern der Anlage, diese zu verwalten.
+
+== Fehler-Report
+
+[options="header"]
+|===
+|Pfad |Parameter |Beschreibung |Rückgabe
+|mitgliederverwaltung | … | Mitglied erstellen nicht möglich, falls Name bereits vergeben oder Club keine Zahl | whitelabelErrorPage
+|mitgliederverwaltung| … | Mitglied löschen| whitelabelErrorpage
+|abrechnung | … |Klick auf Abrechnung erstellen |whitelabelErrorPage 
+|partnerclub | … |Club mit Nicht-Zahl als ID |whitelabelErrorPage 
+|turnier/mitarbeiter | … |Turnier starten |oberste Zeile konsequent unlesbar, da ausserhalb des Bildschirms 
+|turnier/mitarbeiter | … |Datum in der Vergangenheit |Es kann eine Turnier in der Vergangenheit angelegt sowie gestartet werden
+|===
+
+== Sonstiges
+
+* Optik der Anwendung
+
+Konsistente, schlüssige, gefällige Optik. Für einen echten exklusiven Golfplatz würde man wohl einen Star-Webdesigner verpflichten, aber für unsere Zwecke durchaus gut. Hübsche Produkte im Shop.
+Bei Hinzufügen von Chips auf das eigene Konto steht "submit" - das einzige englische Wort im Design. Netter, wenn auch etwas "unprofessioneller" Humor.
+
+* Fehlende Features
+
+A06, A07, A09, A13, A14, A18
+
+
+* Interaktion mit der Anwendung (Usability)
+
+
+Grundsätzlich ebenfalls gut, mit folgenden Anmerkungen:
+
+- die vielen WhiteLabelPages, die man auf der Account-Erstellen-Seite erreicht, sind sehr irritierend, insbesondere, wenn das die erste Seite ist, die angeschaut wird. Aber hoffen wir auch mal, dass die Manager/Mitarbeiter irgendwann lernen, worauf sie achten müssen
+
+- die Seite, auf der man als Kunde Kurse bucht, ist in zweifacher Hinsicht etwas verwirrend. Zum einen stehen blosse Informationen auf Feldern, die wie ausgegraute (aus irgendeinem Grund zeitweilig nicht verfügbare) grüne Buttons wirken. Zum anderen muss ich auch meine kostenlosen Kurse durch Klick auf "kostenpflichtig buchen" aktivieren. Da suchen Kunden u.U. recht lange, ehe sie erkennen, wie sie an ihre kostenlosen Kurse kommen.
+
+
+- auf derselben Seite ist die Übersicht rechts praktisch, wenn man während eines mehrtägigen Aufenthalts jeden Tag Kurse hat. Wenn man aber einmal im Monat auf einen Tag vorbei schaut und nicht mehr weiß, welcher es war, dann wird die Suche Tag für Tag umständlich. Eine Wochen- oder Monatsübersicht wäre hilfreich.
+
+== Verbesserungsvorschläge
+
+* etwas mehr Kontrolle bei der Dateneingabe
+
+* Name nicht als Primärschlüssel verwenden. Erstaunlich viele Menschen der Zielgruppe heißen einfach Mr./Mrs. Smith/Jones/Brown, und Donald Trump golft auch gern in Familie 
+
+* bei der Kostenübersicht sind sämtliche Werte positiv auf grünem Grund (sowohl Einnahmen (an Chips) als auch alle Ausgaben). Eine optische Unterscheidung von Einnahmen/Ausgaben wäre hilfreich.
+
+* beim Hinzufügen von Waren in den Warenkorb wäre ein Feedback schön.
+
+* die Möglichkeit, neue Ware im Pro Shop hinzufügen
+
+* die Turniererstellung funktioniert nicht, wenn der User ein anderes Zeitsystem als mitteleuropäisch verwendet. Im Zuge der globalen Orientierung des Golfparadieses könnte dieser Punkt optimiert werden

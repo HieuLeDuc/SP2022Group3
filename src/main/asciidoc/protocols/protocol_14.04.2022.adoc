@@ -1,0 +1,37 @@
+= Protokoll Gruppe 3
+
+Treffen am 14.04.2022
+
+Ort:      Hochschule Merseburg +
+Beginn:   12:00 Uhr +
+Ende:     13:00 Uhr
+
+__Schriftführer:__ Robert Peter
+
+*Nächstes Treffen:* +
+21.04.2022, 12:30 Uhr, Hochschule Merseburg
+
+__Teilnehmer:__
+
+- Robert Peter
+- Thomas Berthold
+- Anas Lasri
+- Younes Achahba
+- Duc Hieu Le
+
+== Bemerkungen
+
+*Aufgabenteilung Pflichtenheft:* +
+- funktionale/nicht-funktionale Anforderungen (Younes) +
+- Aktivitätsdiagramm (Le) +
+- Use-Case-Diagramm (Anas) +
+- Sequenz-Diagramm (Thomas) +
+- Klassen-Diagramm (Thomas) +
+- GUI (Robert + Le) +
+- Kontext-Diagramm (Anas) +
+- Top-Down-Diagramm (Anas) 
+
+== Aktueller Stand
+
+Gleicher Stand wie vorher.
+

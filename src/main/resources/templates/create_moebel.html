@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<meta http-equiv=“content-type“ content=“text/html; charset=UTF-8″>
+	<title>Lager Verwaltung</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+	<nav>
+
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/moebeln}">Lager</a></li>
+			</ul>
+		</div>
+	</nav>
+	<br>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class="text-center">Neue Ware hinzufuegen</h1>
+				<div class="card-body">
+					<form th:action="@{/moebeln}" th:object="${moebel}" method="POST" enctype="multipart/form-data">
+
+
+						<div class="form-group">
+							<label>Name</label> <input type="text" required name="name" th:field="*{name}" pattern="[a-zA-Z0-9\s]+" title="Name sollte nur Buchstaben und Zahlen enthalten" class="form-control"
+								placeholder="Name eingeben" />
+						</div>
+
+						<div class="form-group">
+							<label>Preis</label> <input type="input" required name="preis" th:field="preis" pattern="^(\d*\.)?\d+$" title="Feld sollte nur Zahlen und Punkt enthalten" class="form-control"
+								placeholder="Preis Eingeben" />
+						</div>
+
+						<div class="form-group">
+							<label>Farbe</label> <input type="text" name="farbe" th:field="*{farbe}" 
+								class="form-control" placeholder="Farbe eingeben" />
+								<p th:if="${#fields.hasErrors('farbe')}" th:errors="*{farbe}"/>
+						</div>
+
+						<div class="form-group">
+							<label>Material</label> <input type="text" name="preis" th:field="*{material}"
+								class="form-control" placeholder="Material eingeben" />
+								<p th:if="${#fields.hasErrors('material')}" th:errors="*{material}"/>
+						</div>
+
+						<div class="form-group">
+							<label>Masse</label> <input type="text" name="masse" pattern="^(\d*\.)?\d+$" title="Feld sollte nur Zahlen und Punkt enthalten" th:field="*{masse}" 
+								class="form-control" placeholder="Masse eingeben" />
+								<p th:if="${#fields.hasErrors('masse')}" th:errors="*{masse}"/>
+						</div>
+
+						<div class="form-group">
+							<label>Hersteller</label> <input type="text" name="hersteller" th:field="*{hersteller}"
+								class="form-control" placeholder="Hersteller eingeben" />
+								<p th:if="${#fields.hasErrors('hersteller')}" th:errors="*{hersteller}"/>
+						</div>
+
+						<div class="form-group">
+							<label>Annotation</label> <input type="text" name="annotation" th:field="*{annotation}"
+								class="form-control" placeholder="Annotation eingeben (Nur Neu, Aktion, Bestseller oder null(leer) sind akzeptiert)" />
+						</div>
+
+			
+						<div class="form-group">
+									<label>Kategorie</label> <select name="category"
+										th:field="*{category}" class="form-control">
+										<option value="Küche">Küche</option>
+										<option value="Wohnzimmer">Wohnzimmer</option>
+										<option value="Schlafzimmer">Schlafzimmer</option>
+										<option value="Arbeitszimmer">Arbeitszimmer</option>
+									</select>
+
+						<div class="form-group">
+							<label>Menge</label> <input type="text" name="menge" th:field="*{stock}" pattern="^[0-9]*$" title="Feld sollte nur Zahlen enthalten"
+								class="form-control" placeholder="Menge eingeben" />
+								<p th:if="${#fields.hasErrors('stock')}" th:errors="*{stock}"/>
+						</div>
+						<div>
+						    <label>Foto</label>	<input type="file" name="image" accept=".jpg" 
+								class="form-control" placeholder="Foto eingeben"/>
+   						</div>
+						<div class="box-footer">
+							<button type="submit" class="btn btn-primary">	Bestätigen</button>
+							<button type="button" onclick="history.back()" class="btn btn-primary">	Zurück</button>	
+						</div>
+					</form>
+					
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

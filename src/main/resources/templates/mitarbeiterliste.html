@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<meta charset="ISO-8859-1">
+		<meta http-equiv=“content-type“ content=“text/html; charset=UTF-8″>
+		<title>Mitarbeiter</title>
+		<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		inigintegrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+		crossor="anonymous">
+		<link th:href="@{/resources/css/style.css}" rel="stylesheet"
+              href="../static/resources/css/style.css" type="text/css"/>
+    </head>
+<body>
+<nav th:include="navigation :: navigation"></nav>
+        <section layout:fragment="content" >
+        <div class ="content">
+	<div class ="container">
+		<h1> Mitarbeiter </h1>
+		
+		<table class = "table table-striped table-bordered">
+			<thead class = "table-dark">
+				<tr>
+					<th>Vorname</th>
+					<th>Nachname</th>
+					<th>Email</th>
+					<th>Freigeschalten</th>
+					<th>Einstellungen </th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each = "mitarbeiter: ${mitarbeiterList}">
+					<td th:text = "${mitarbeiter.getFirstname()}"></td>
+					<td th:text = "${mitarbeiter.getLastname()}"></td>
+					<td th:text = "${mitarbeiter.getEmail()}"></td>
+					<td th:text = "${mitarbeiter.isEnabled()}"></td>
+					<td>
+						<a th:href = "@{/mitarbeiterBearbeiten/{id}(id=${mitarbeiter.getId()})}"
+						 class = "btn btn-primary">Bearbeiten</a>
+						
+						<a th:if="${!mitarbeiter.isBoss()}" th:href = "@{/mitarbeiterliste/{id}(id=${mitarbeiter.getId()})}"
+						 class = "btn btn-danger">entfernen</a>
+						 
+					</td>
+				</tr>
+			</tbody>
+		
+		</table>
+		<div class = "row">
+			<div class = "col-lg-3">
+				<a th:href = "@{/mitarbeiterFreigeben}" class = "btn btn-primary btn-sm mb-3">Mitarbeiter freigeben</a>
+				<a th:href="@{/}" class="btn btn-primary btn-sm mb-3"> Zu Mainpage</a>
+
+			</div>
+		</div>
+		</div>
+	</div>
+	</section>
+</body>
+</html>

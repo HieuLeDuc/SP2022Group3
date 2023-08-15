@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+        <script th:src="@{/webjars/jquery/jquery.min.js}"
+                src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script th:src="@{/webjars/Semantic-UI/semantic.min.js}"
+                src="http://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
+        <link th:href="@{/webjars/Semantic-UI/semantic.min.css}" rel="stylesheet"
+              href="http://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css" type="text/css"/>
+-->
+        <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+        
+        <link th:href="@{/resources/css/style.css}" rel="stylesheet"
+              href="../static/resources/css/style.css" type="text/css"/>
+              <style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+	
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+	background-color: #505d61;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+</style>
+    </head>
+    
+    <body>
+    <nav th:include="navigation :: navigation"></nav>
+        <section layout:fragment="content">
+        <div class ="content">
+        <div class = "products">
+            <div class = "container">
+                <h1 class = "lg-title">Bundle</h1>
+                  <p class = "text-light">Wir helfen dir bei der gezielten Suche nach deinen Wunschmöbeln. Entdecke die größte Auswahl an Möbeln jetzt bei Möbel-Hier..</p>
+
+                <div class = "product-items" >
+ 
+                    <!-- single product 1 -->
+                    <div class = "product" th:each="bundle: ${bundles}">
+                    	<div class = "off-info">
+                            <h2 class = "sm-title" th:text="${bundle.getAnnotation()}">25% off</h2>
+                        </div>
+                        <div class = "product-content">
+                        
+                        <div class="image">
+                            	<a >
+                             		<img class="product-img" th:src="@{/resources/img/{image}.jpg(image=${bundle.name})}" alt="Image Not Found" onerror="this.onerror=null;this.src='https://placekitten.com/200/300';">
+                             		</a>
+              			  </div>
+                            
+                        </div>
+						
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                              
+                            </div>
+                            <a href = "#" class = "product-name" th:text="${bundle.name}">Couchtischt</a>
+                            <p class ="product-price" th:text="${bundle.getPrice().toString()}">€ 150.00</p>
+                        </div>
+                        
+                        
+                        <form action="/cart" sec:authorize="isAuthenticated()" method="post">
+                        	<input type="hidden" name="pid" value="0" th:value="${bundle.getId()}"/>
+		 					<button type = "submit" class = "btn-cart" >
+                                 <span>in Warenkorb</span>
+                        	</button>
+                        </form>
+                        
+
+                    </div>
+                    <!-- end of single product -->  
+                
+        </div> 
+        </div>        
+       </section>
+       <footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4> Hilfe und Kontakt</h4>
+  	 			<ul>
+  	 		     	<li><a href="tel: 49123456789">Tel: 49 (0)123 456789</a></li>
+  	 				<li><a href="#">Lieferung</a></li>
+  	 				<li><a href="#">Payment</a></li>
+  	 				
+  	 				
+  	 				
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Standort</h4>
+  	 			<ul>
+  	 				<li><a href="#">MusterStraße 01, 06217 Merseburg Deutschland</a></li>
+  	 				<li><a href="#"></a></li>
+  	 				<li><a href="#"></a></li>
+  	 				<li><a href="#"></a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Kategorie</h4>
+  	 			<ul>
+  	 				<li><a href="http://localhost:8080/moebelnkatalog/Küche}">Zu Küche</a></li>
+  	 				<li><a href="http://localhost:8080/moebelnkatalog/Wohnzimmer">Zu Wohnzimmer</a></li>
+  	 				<li><a href="http://localhost:8080/moebelnkatalog/Schlafzimmer">Zu Schlafzimmer</a></li>
+  	 				<li><a href="http://localhost:8080/moebelnkatalog/Arbeitszimmer">Zu Arbeitszimmer</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>folge uns</h4>
+  	 			<div class="social-links">
+  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="#"><i class="fab fa-twitter"></i></a>
+  	 				<a href="#"><i class="fab fa-instagram"></i></a>
+  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
+    </body>
+</html>

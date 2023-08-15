@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<meta http-equiv=“content-type“ content=“text/html; charset=UTF-8″>
+	<title>Lager Verwaltung</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		inigintegrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossor="anonymous">
+</head>
+
+<body>
+	<nav>
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/bundles}"> Moebel</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/bundles}">Management</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<h1> Bundle detail </h1>
+		</div>
+
+		<table class="table table-striped table-bordered">
+			<thead class="table-dark">
+				<tr>
+					<th>Name</th>
+					<th>Preis</th>
+					<th>Rabatt</th>
+					<th>Status</th>
+					<th>Menge</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="bundle: ${bundles}">
+					<td th:text="${bundle.name}"></td>
+					<td th:text="${bundle.getPrice().getNumber()}"></td>
+					<td th:text="${bundle.rabatt}"></td>
+					<td th:text="${bundle.annotation}"></td>
+					<td th:text="${bundle.stock}"></td>
+				</tr>
+			</tbody>
+
+		</table>
+
+		<div class="row">
+			<h1> Moebel liste </h1>
+		</div>
+
+		<table class="table table-striped table-bordered">
+			<thead class="table-dark">
+				<tr>
+					<th>ArtikelNr</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="moebel: ${moebeln}">
+					<td th:text="${moebel.getName()}"></td>
+				</tr>
+			</tbody>
+
+		</table>
+		<div class="row">
+			<div class="col-lg-3">
+				<tr th:each="bundle: ${bundles}">
+					<a th:href="@{/bundles/view/addcontent/{id}(id=${bundle.getId()})}"
+						class="btn btn-primary btn-sm mb-3"> Neue Moebel Hinzufuegen</a>
+					<a th:href="@{/bundles/view/removecontent/{id}(id=${bundle.getId()})}"
+						class="btn btn-danger">Löschen</a>
+					<button type="button" onclick="history.back()" class="btn btn-primary">	Zurück</button>
+			</div>
+		</div>
+	
+	</div>
+
+</body>
+
+</html>

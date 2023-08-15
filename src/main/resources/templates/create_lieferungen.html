@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv=“content-type“ content=“text/html; charset=UTF-8″>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link th:href="@{/resources/css/style.css}" rel="stylesheet"
+	href="../static/resources/css/style.css" type="text/css" />
+</head>
+<body>
+	<nav th:include="navigation :: navigation"></nav>
+	<section layout:fragment="content">
+		<div class="content">
+			<div class="container">
+				<div class="row">
+					<div
+						class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+						<h1 class="text-center">Neue Lieferung anlegen</h1>
+						<div class="card-body">
+							<form th:action="@{/lieferungens}" th:object="${lieferungen}"
+								method="POST">
+								<div class="form-group">
+
+									<label>Datum</label> <input type="date" name="datum"
+										th:min="${#dates.format(#dates.createNow(),'YYYY-MM-dd').toString()}"
+										min="2022-01-01" max="2030-12-31" th:field="*{datum}"
+										class="form-control" placeholder="Datum eingeben" />
+								</div>
+
+								<div class="form-group">
+									<label>Fahrzeug</label> <input type="text" name="fahrzeug"
+										th:field="*{fahrzeug}" class="form-control"
+										placeholder="Fahrzeug eingeben" />
+								</div>
+
+								<div class="form-group">
+									<label>Lieferadresse</label> <input type="text"
+										name="lieferadresse" th:field="*{lieferadresse}"
+										class="form-control" placeholder="Lieferadresse eingeben" />
+								</div>
+
+
+								<div class="form-group">
+									<label>Gemietet</label> <select name="gemietet"
+										th:field="*{gemietet}" class="form-control">
+										<option value="True">True</option>
+										<option value="False">False</option>
+									</select>
+
+
+								</div>
+
+								<div class="form-group">
+
+									<label>Uhrzeit</label> <input type="time" name="uhrzeit"
+										min="08:00" max="20:00" th:field="*{uhrzeit}"
+										class="form-control" placeholder="Von wann bis wann?" />
+								</div>
+
+								<div class="box-footer">
+									<button type="submit" class="btn btn-primary">Freigeben</button>
+									<button type="button" onclick="history.back()" class="btn btn-primary">	Zurück</button>
+								</div>
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

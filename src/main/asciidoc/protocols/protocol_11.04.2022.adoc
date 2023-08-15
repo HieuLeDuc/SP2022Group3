@@ -1,0 +1,31 @@
+= Protokoll Gruppe 03
+
+Treffen am 11.04.2022
+
+Ort:      Hochschule Merseburg +
+Beginn:   15:15 Uhr +
+Ende:     16:00 Uhr
+
+__Schriftführer:__ Robert Peter
+
+*Nächstes Treffen:* +
+14.04.2022, 12:00 Uhr, Hochschule Merseburg
+
+__Teilnehmer:__
+//Tabellarisch oder Aufzählung, Kennzeichnung von Teilnehmern mit besonderer Rolle (z.B. Kunde)
+
+- Robert Peter
+- Thomas Berthold
+- Anas Lasri
+- Younes Achahba
+- Duc Hieu Le
+- Sven Karol 
+
+== Bemerkungen
+- UML-Modellierungstool soll *draw.io* sein
+- bis nächste Woche soll eine erste Version des Pflichtenhefts vorliegen
+
+
+== Aktueller Stand
+Die Gruppenmitglieder haben sich fast alle in die Programmierumgebung eingearbeitet 
+und Veränderungen am Gästebuch vorgenommen, um ein gewisses Verständnis-Level zu erlangen.

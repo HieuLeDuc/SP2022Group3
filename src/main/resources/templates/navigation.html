@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+     
+    <head>
+    <style>
+     body {
+  background-image: url("/resources/img/MoebelHintergrund.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+    </style>
+   
+    </head>
+    <body>
+        <nav th:fragment="navigation">
+            <div class="logo">
+					<!--<p>Möbel-Hier</p>-->
+					<a href="/">Möbel-Hier</a>
+				</div> 
+				<ul>
+
+					<li><a href="/moebelnkatalog">Möbel</a></li>
+					<li><a href="/bundleskatalog">Bundles</a></li>
+
+					<li sec:authorize="isAuthenticated()"><a href="/moebeln">Moebel Lager</a></li>
+					<li sec:authorize="isAuthenticated()"><a href="/bundles">Bundle Lager</a></li>
+					<li sec:authorize="hasRole('BOSS')"><a href="/mitarbeiterliste">Mitarbeiter</a></li>
+					<li sec:authorize="isAuthenticated()"><a href="/kundenliste">Kunden</li>
+					<li sec:authorize="isAuthenticated()"><a href="/lieferungens">Lieferungen</a></li>
+					<li sec:authorize="isAuthenticated()"><a href="/bestellung">Bestellungen</a></li>
+					<li sec:authorize="isAuthenticated()"><a href="/cart">Warenkorb</a></li>
+					<li sec:authorize="isAuthenticated()"><a href="/logout">Abmelden</a></li>
+					<li sec:authorize="!isAuthenticated()"><a href="/login">Anmelden</a></li>
+				</ul>
+        </nav>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+= Protokoll Gruppe 3
+
+Treffen am 02.05.2022
+
+Ort:      Hochschule Merseburg +
+Beginn:   15:15 Uhr +
+Ende:     16:00 Uhr
+
+__Schriftführer:__ Robert Peter
+
+*Nächstes Treffen:* +
+05.05.2022, 12:30 Uhr, Hochschule Merseburg
+
+__Teilnehmer:__
+
+- Robert Peter
+- Thomas Berthold
+- Anas Lasri
+- Younes Achahba
+- Duc Hieu Le
+- Steve Kuhnt
+- Prof. Karol
+
+== Bemerkungen
+
+*ToDo bis 09.05.2022:*
+
+* Anforderungen anpassen:
+- Katalog soll nicht nur erstellt werden, sondern auch Artikel hinzufügen/ändern/löschen
+- Artikelzusatzinfos (Neu, Bestseller, usw) als Muss-Anforderung hinzufügen
+- Vorschläge beruhend auf was andere Kunden gekauft haben als Kann-Kriterium hinzufügen
+- Es sollen mehr Anforderungen als Use-Cases sein (ohne Use-Cases zu streichen)
+* Jeder soll einen vertikalen Prototypen coden (View, Controller und Datenbank einbinden)
+- Dafür am besten jeder einen Branch erstellen
+* Entwicklerdokumentation schreiben
+- Muss nicht zwangsläufig bis Montag fertig sein, aber sollte so weit wie möglich sein
+- Falls es nicht fertig wird im vorhinein per Mail um mehr Zeit bitten

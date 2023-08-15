@@ -1,0 +1,605 @@
+= Test-Plan
+
+Dieser Testplan stellt eine vereinfachte Version der IEEE 829-1998 Vorlage dar.
+
+== Einführung
+Der Testplan gibt allen Stake-Holdern eine Übersicht über die Tests, denen die Software MHMPS vor Auslieferung unterzogen wird. Er stellt sicher, dass die Software systematisch und umfassend getestet wird.
+
+== Aufbau der Testbezeichner
+
+Die ersten beiden Buchstaben geben die Art des Testes entsprechend der folgenden Tabelle an:
+
+[cols="1,4"]
+|===
+|Kürzel |Bedeutung
+|IT  |Integrationstest
+|FT  |Funktionstest
+|UT  |Unittest
+|===
+
+Die folgende Ziffer gibt den Testfall an, ein eventuell folgender Buchstabe die Variation oder den untergeordneten Testfall. + 
+Bsp: IT 1c -> Der Integrationstest mit der Nummer 1, Variante c.
+
+
+== Test Gegenstände
+
+- Klassen
+- Zusammenspiel der Klassen bzw. Komponenten
+- Anbindung externer Komponenten (zB. Datenbank)
+- Verarbeitung unangemessener Eingaben
+
+== Zu testende Funktionalitäten
+
+|===
+|ID            |[F0010]  
+|TestZiel      |Mitarbeiter freigeben
+|Voraussetzung | Neue Mitarbeiter werden freigegeben und bekommen Anmeldaten
+|Eingeben      | Name, Vorname, Personalnummer, Adresse…
+|Erwartet      | Freigegeben und Anmelddaten zeigen
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0020]  
+|TestZiel      |Mitarbeiter sperren
+|Voraussetzung |Gekündigte Mitarbeiten sperren lassen
+|Eingeben      |Mitarbeiter Daten eingeben
+|Erwartet      | Mitarbeiter gesperrt 
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0030]  
+|TestZiel      |Einloggen
+|Voraussetzung | Der Mitarbeiter schaltet das Programm ein und muss in der lage sein sich anzumelden
+|Eingeben      | Personnalnummer und Passwort
+|Erwartet      | eingeloggt
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0040]  
+|TestZiel      |Ausloggen
+|Voraussetzung | Der Mitarbeiter sich abmelden lassen 
+|Eingeben      | Auf die Taste Ausloggen drücken
+|Erwartet      | ausgelogt
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0050]  
+|TestZiel      |Kontaktdaten aufnehmen
+|Voraussetzung | Neue Kunden Daten einfügen
+|Eingeben      |Kunden Daten:  Name, Vorname, Email, Telefonnummer......
+|Erwartet      | Neue Kundendaten sind angelegt
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0060]  
+|TestZiel      |Daten aufrufen
+|Voraussetzung |Im System soll es möglich sein, Daten von Kunden aufzurufen
+|Eingeben      |Kunden Nachname eingeben
+|Erwartet      |Die ganze Kundendaten
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0070]  
+|TestZiel      |Daten löschen
+|Voraussetzung | Im System soll es möglich sein, Daten von Kunden zu löschen.
+|Eingeben      |Auf die Taste "Daten Löschen" drücken
+|Erwartet      | Daten sind gelöscht
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0080]  
+|TestZiel      |Kataloge erstellen 
+|Voraussetzung | Das Programm soll ein Katalog durch Auflistung von allen Waren im aktuellen Lager erstellen
+|Eingeben      | Katalog Liste 
+|Erwartet      | Auflistung von allen Waren im Lager
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0090]  
+|TestZiel      |Waren im Katalog hinzufügen
+|Voraussetzung | Im System sollen Produkte hinzugefügt werden können
+|Eingeben      | Neue Möbel hinzufügen
+|Erwartet      | Möbel hinzugefügt und befindet sich auf Katalog Liste
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0100]  
+|TestZiel      |Waren aus dem Katalog entfernen 
+|Voraussetzung | Im System sollen Produkte entfernt werden können
+|Eingeben      | Auf die Taste "Produkte entfernt" drücken
+|Erwartet      | Rückgabe auf Katalog Liste und Produkt entfernt 
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0110]  
+|TestZiel      |Waren in den Warenkorb hinzufügen
+|Voraussetzung | Der Mitarbeiter auf Kundenwünsche Produkten im Warenkorb einlegen
+|Eingeben      | Taste "Zum Warenkorb hinzufügen"
+|Erwartet      | Produkten im Warenkorb angelegt 
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0120]  
+|TestZiel      |Waren filtern
+|Voraussetzung | Der Mitarbeiter sollte die Waren nach ArtikelNr filtern 
+
+|Eingeben      | Gewünschte ArtikelNr eingeben und auf die Taste “Filtern“ drücken…
+|Erwartet      | Die gesuchte Produktn
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0130]  
+|TestZiel      |Warenkorb Einsichtn
+|Voraussetzung | Alle eingefügte Produkten im Warenkorb anzeigen
+|Eingeben      | Auf Warenkorb Zeichen drücken …
+|Erwartet      | Alle Produkten im Warenkorb finden
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0140]  
+|TestZiel      |Bestellung Abschicken
+|Voraussetzung | Lagermitarbeiter über neue Bestelungen benachrichtigen n
+|Eingeben      | Drücken auf Taste Bestellunge speichern…
+|Erwartet      | Die Lagermitarbeiter bekommt die bestellung Details
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0150]  
+|TestZiel      |Bestellung bearbeiten
+|Voraussetzung | Das Programm soll es ermöglichen die Bestellung zu bearbeiten
+|Eingeben      | Auf die Taste “Bestellung bearbeiten“ drücken
+
+|Erwartet      | Bestellung Daten ändern
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0160]  
+|TestZiel      |Bestellung abrufen
+|Voraussetzung | Durch Eingabe von Bestellungsnummer soll das Progamm die Bestellung zeigen.
+|Eingeben      | Bestellungsnummer…
+|Erwartet      | Die gesuchte Bestellung zeigen
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0190]  
+|TestZiel      |LKW mieten
+|Voraussetzung | Im System soll es möglich sein, LKWs zu mieten.
+|Eingeben      | Auf die Taste “LKW mieten“ drücken…
+|Erwartet      | LKW gemietet
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0200]  
+|TestZiel      |LKW stornieren 
+|Voraussetzung | Im System soll es möglich sein, LKWs zu stornieren.
+|Eingeben      | Auf die Taste “LKW stornieren“ drücken…
+|Erwartet      | LKW storniert
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0210]  
+|TestZiel      |LKW bearbeitenn
+|Voraussetzung | Im System soll es möglich sein, LKW Daten zu bearbeiten.
+
+|Eingeben      | Auf die Taste “LKW bearbeiten“ drücken…
+|Erwartet      | Lieferanten Listen
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0220]  
+|TestZiel      |Lieferanten Daten einfügen, bearbeiten und entfernenn
+|Voraussetzung | Im System sollen alle Lieferanten eingefügt, bearbeitet und entfernt werden können.n
+|Eingeben      |Auf “Lieferanten“ Taste drücken…
+|Erwartet      | Lieferanten Listen
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0230]  
+|TestZiel      |Abrechnung 
+|Voraussetzung | Das Programm soll Abrechnungen mit Vergleich zum Vormonat erstellen.
+|Eingeben      | Auf “Lieferanten“ Taste drücken
+|Erwartet      | Lieferanten Liste
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |[F0240]  
+|TestZiel      |Lagerverwaltung 
+|Voraussetzung | Testperson befindet sich auf Lagervewaltung, und drückt auf taste „Neue Möbel hinzufügen“
+|Eingeben      | Möbel Daten eingeben
+|Erwartet      |Möbel Daten eingefügt und befindet sich auf die Möbel Liste
+|===
+
+== Nicht zu testende Funktionalitäten
+Nicht getestet werden externe Komponenten wie Datenbanken, Bibliotheken, Server-Software von Dritten (bsp: tomcat) sowie Java-Methoden, da sie vom jeweiligen Anbieter getestet werden.
+
+== Herangehensweise
+
+Klassen werden nach Erstellung mit JUnit-Tests getestet. Integrationstest erfolgen nach dem bottom-up-Prinzip. Eine konkrete Liste kann erst erabreitet werden, wenn die von den Kommilitonen verwendeten Klassen und ihre Verknüpfungen bekannt sind. Die Funktionstests werden nach der entsprechenden Liste weiter unten im Dokument abgearbeitet.
+
+== Umgebungsvoraussetzungen
+Die Tests finden auf den Rechnern der implementierenden Studierenden statt. Erforderlich ist die Verwendung von Spring Tool Suite 4, Version 4.14.0
+
+== Testfälle und Verantwortlichkeit
+Jede testbezogene Aufgabe muss einem Ansprechpartner zugeordnet werden.
+
+=== Unit Tests
+
+Für Unit Tests ist immer ein anderer Student zuständig als derjenige, der die Klasse implementiert hat.
+
+[options="headers"]
+|===
+|ID |Klasse |Implementierer |Tester
+|UT 1  	|Moebel              	|Le         |Steve  
+|UT 2 	|Bundle          		|Le         |Steve
+|UT 3 	|Controller        		|Steve     	|Le        
+|UT 4 	|MoebelManagement       |Steve     	|Le
+|UT 5 	|Kunde          		|Robert     |Anas
+|UT 6 	|KundenController       |Robert		|Anas
+|UT 7 	|KundenManagement       |Robert     |Anas
+|UT 8 	|Mitarbeiter       		|Anas       |Robert
+|UT 9 	|MitarbeiterController  |Anas       |Robert
+|UT 10	|MitarbeiterManagement  |Anas       |Robert
+|UT 11	|BestellungsController	|Thomas     |Younes
+|UT 12	|InventoryController	|Thomas 	|Younes
+|UT 13  |StatisticController	|Younes		|Younes
+|===
+
+=== Integrationstests
+
+[options="headers"]
+|===
+|ID |Klasse |interagierende Klasse |Implementierer |Tester
+|IT 1  |Moebel  	| Bundle   		|Le            	|Le 
+|IT 2  |Moebel  	| Controller   	|Steve         	|Le 
+|IT 3  |Bundle  	| Controller   	|Le           	|Steve  
+|IT 4  |Kunde  	| KundenController   		|Robert             |Anas  
+|IT 5  |Mitarbeiter| MitarbeiterController   		|Anas        |Robert  
+|IT 6  |BestellungsController  | StatisticController   		|Thomas         |Younes 
+|IT 7  |BestellungsController  | InventoryController   		|Younes         |Thomas  
+|===
+
+=== Funktionstests
+Mithilfe von Funktionstests wird geprüft, ob die Software die funktionalen Erwartungen und Anforderungen im Gebrauch erfüllt. 
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 1
+|Use Case      |<<UC0150>>  Monatliche Abrechnung aufrufen
+|Voraussetzung(-en)        a| Geschäftsführer nutzt das System
+|Ereignis      a| Geschäftsführer wählt "Abrechnung anzeigen"
+|Ergebnis     a| Abrechnung des aktuellen Monats wird angezeigt
+|verantwortlich     a| Younes
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 1a
+|Use Case      |<<UC0150>> Daten mit Vormonat vergleichen
+|Voraussetzung(-en)        a| Geschäftsführer nutzt das System und Abrechnung des aktuellen Monats wird angezeigt
+|Ereignis      a| Geschäftsführer wählt "Mit Vormonat vergleichen"
+|Ergebnis     a| Aktuelle Abrechnung wird der Abrechnung des Vormonats gegenübergestellt
+|verantwortlich     a| Younes
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 1b
+|Use Case      |<<UC0140>> Lieferanten einfügen
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System 
+|Ereignis      a| Mitarbeiter wählt "Lieferanten hinzufügen" und gibt folgende Informationen an:
+ * Name des Lieferanten
+ * Kontaktdaten
+|Ergebnis     a|Neuer Eintrag wird im Lieferantenverzeichnis angelegt
+|verantwortlich     a| Younes
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 1c
+|Use Case      |<<UC0140>>Lieferanten entfernen
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System 
+|Ereignis      a| Mitarbeiter wählt "Lieferanten entfernen" und wählt dann einen Eintrag aus dem Lieferantenverzeichnis aus
+|Ergebnis     a| 
+ * Eintrag wird aus dem Lieferantenverzeichnis gelöscht
+ * Möbel des Lieferanten werden aus dem Katalog entfernt  
+|verantwortlich     a| Younes
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 2
+|Use Case      |<<UC>> Ware selbst abholen
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System und bearbeitet eine Bestellung
+|Ereignis      a| Mitarbieter wählt "Lieferoptionen", wählt "Selbstabholung"
+|Ergebnis     a| Bei Eintreffen der Ware wird eine Benachrichtigung an den Mitarbeiter gesendet, damit dieser den Kunden informiert, dass seine Ware zur Abholung bereit steht
+|verantwortlich     a| Anas
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 2a
+|Use Case      |<<UC0130>> LKW mieten (Firma)
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System und bearbeitet eine Bestellung
+|Ereignis      a| Mitarbieter wählt "Lieferoptionen", wählt "LKW mieten(Firma)"
+|Ergebnis     a| 
+
+ * Anhand des Gewichts der Bestellung wird ein LKW zur Auslieferung ausgewählt
+ * LKW ist für den voraussichtlichen Lieferzeitraum nicht mehr verfügbar 
+|verantwortlich     a| Anas
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 2b
+|Use Case      |<<UC0130>> LKW mieten (Kunde)
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System und bearbeitet eine Bestellung
+|Ereignis      a| Mitarbeiter wählt "Lieferoptionen", wählt "LKW mieten(Kunde)"
+|Ergebnis     a|
+
+ * Anhand des Gewichts der Bestellung wird ein LKW zur Auslieferung ausgewählt
+ * LKW ist für den voraussichtlichen Lieferzeitraum nicht mehr verfügbar 
+|verantwortlich     a| Anas
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 2b
+|Use Case      |<<UC>> Rücklieferung
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System
+|Ereignis      a| Mitarbeiter wählt eine Bestellung aus und wählt "Rücklieferung" 
+|Ergebnis     a| 
+ * Bearbeitungsgebühren werden von Bestellkosten abgezogen
+ * Neuer Wert wird als Kosten der Monatsabrechnung hinzugefügt
+|verantwortlich     a| Anas
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 3
+|Use Case      |<<UC0131>> LKW Storno (Kostenlos)
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System
+|Ereignis      a| Mitarbeiter wählt eine Bestellung aus, wählt "Lieferoptionen", wählt "LKW stornieren" und wählt eine neue Lieferoption.
+
+|Ergebnis     a| 
+
+ * Mietkosten werden als Kosten der Monatsabrechnung hinzugefügt
+ * Bestellung gibt die neue Lieferoption wieder
+ * LKW ist für den alten Lieferzeitraum wieder verfügbar
+|verantwortlich     a| Thomas
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 3a
+|Use Case      |<<UC0131>> LKW Storno (20% Bearbeitungsgebühren)
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System
+|Ereignis      a|  Mitarbeiter wählt eine Bestellung aus, wählt "Lieferoptionen", wählt "LKW stornieren" und wählt eine neue Lieferoption.
+|Ergebnis     a|
+
+ * 80% der Mietkosten werden als Kosten der Monatsabrechnung hinzugefügt
+ * Bestellung gibt die neue Lieferoption wieder
+|verantwortlich     a| Thomas
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 4
+|Use Case      |<<UC0050>> Ware bestellen
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System
+|Ereignis      a| 
+Mitarbeiter wählt Artikel aus dem Katalog
+|Ergebnis     a|
+
+* Preis der Ware wird den Bestellkosten hinzugefügt
+* Bestellung an den Lieferanten wird aufgegeben
+|verantwortlich     a| Le
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 4a
+|Use Case      |<<UC0121>> Bestellung stornieren
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System
+|Ereignis      a| Mitarbeiter ruft Bestellungen auf, wählt eine Bestellung und wählt "Bestellung stornieren" 
+|Ergebnis     a|
+
+* Bestellkosten werden als Kosten der Monatsabrechnung hinzugefügt
+* Wenn vorhanden wird der gemietete LKW für die Bestellung storniert
+|verantwortlich     a| Le
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 4b
+|Use Case      |<<UC0121>> Bestellung abändern
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System
+|Ereignis      a| Mitarbeiter ruft Bestellungen auf, wählt eine Bestellung und wählt "Bestellung bearbeiten" 
+|Ergebnis     a|
+Mitarbeiter kann nun:
+ 
+ * individuelle Artikel stornieren/hinzufügen
+ * Lieferoption ändern
+|verantwortlich     a| Le
+|===
+
+[cols="1h, 4"]
+
+|===
+|ID            |FT 4c
+|Use Case      |<<UC0120>> Bestellstatus abrufen
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System 
+|Ereignis      a| Mitarbeiter ruft Bestellung auf 
+|Ergebnis     a| Bestellungsdetails werden angezeigt
+|verantwortlich     a| Le
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 4d
+|Use Case      |<<UC0030>> Rechnung stellen
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System
+|Ereignis      a| Mitarbeiter wählt einen Zahlungsweg 
+|Ergebnis     a|
+Bestellkosten werden der Monatsabrechnung gutgeschrieben
+|verantwortlich     a| Le
+|===
+
+[cols="1h, 4"]
+
+|===
+|ID            |FT 5
+|Use Case      |<<UC0000>> Katalog aufrufen
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System
+|Ereignis      a| Mitarbeiter ruft den Warenkatalog auf
+|Ergebnis     a| Ware wird aufgelistet
+|verantwortlich     a| Steve
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 5a
+|Use Case      |<<UC0040>> Katalog filtern
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System 
+|Ereignis      a| Mitarbeiter wählt "Filter" und gibt Kriterien zur Eingrenzung der Artikel an (Farbe, Preis, Art des Möbelstücks)
+|Ergebnis     a|Katalogansicht zeigt nur noch Artikel die den angegebenen Attributen entsprechen
+|verantwortlich     a| Steve
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 5b
+|Use Case      |<<UC0090>> Ware im Katalog hinzufügen
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System
+|Ereignis      a| Mitarbeiter wählt "Ware hinzufügen" und gibt Details zum neuen Möbelstück an
+|Ergebnis     a| 
+ * Neue Ware ist im Katalog auffindbar
+ * Neue Ware kann bestellt werden
+|verantwortlich     a| Steve
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 5c
+|Use Case      |<<UC0090>> Ware aus dem Katalog entfernen
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System 
+|Ereignis      a| Mitarbeiter wählt "Ware entfernen" und wählt einen Artikel aus
+|Ergebnis     a|
+Artikel wird aus dem System gelöscht und ist nichtmehr im Katalog auffindbar
+|verantwortlich     a| Steve
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 6
+|Use Case      |<<UC0050>> Ware im Lager eingetroffen
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System
+|Ereignis      a|Ware trifft im Lager ein
+|Ergebnis     a|
+ * Ware wird dem Lagerbestand hinzugefügt
+ * Kunde wird über die eingetroffene Ware informiert
+|verantwortlich     a| Robert
+|===
+
+[cols="1h, 5"]
+
+|===
+|ID            |FT 6a
+|Use Case      |<<UC0050>> Teillieferung
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das Syste
+|Ereignis      a|
+
+* Mitarbeiter ruft Bestellung auf
+
+* Mitarbeiter wählt "Teilauslieferung
+
+* Mitarbeiter wählt indivividuelle Artikel die vom Kunden abgeholt werden
+
+|Ergebnis     a| Gewählte Artikel werden aus dem Lagerbestand entfernt
+|verantwortlich     a| Robert
+
+|===
+
+
+[cols="1h, 5"]
+
+
+|===
+|ID            |FT 7
+|Use Case      |<<UC0010>> Login
+|Voraussetzung(-en)        a| Mitarbeiter nutzt das System
+|Ereignis      a| Mitarbeiter wählt "Login", gelangt zum Login-Bildschirm und gibt im System hinterlegte Anmeldedaten ein.
+|Ergebnis     a| Nutzer ist nun als Geschäftfüherer authentifiziert und kann auf entsprechende Funktionalitäten zugreifen
+|verantwortlich     a| Robert
+|===
+
+[cols="1h, 5"]
+
+
+|===
+|ID            |FT 7a
+|Use Case      |<<UC0010>> Ausloggen
+|Voraussetzung(-en)        a| Geschäftsführer nutzt das System
+|Ereignis      a| Geschäftsführer wählt "Ausloggen".
+|Ergebnis     a| Nutzer wird zu Mitarbeiter und kann nichtmehr auf Geschäftsführerfunktionalitäten zugreifen.
+|verantwortlich     a| Robert 
+|===

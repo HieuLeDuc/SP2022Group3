@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv=“content-type“ content=“text/html; charset=UTF-8″>
+<title>Lager Management System</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"
+              href="../static/resources/css/style.css" type="text/css"/>
+</head>
+<body>
+<nav th:include="navigation :: navigation"></nav>
+        <section layout:fragment="content">
+        <div class ="content">
+	<div class = "container">
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h3 class = "text-center"> Lieferung  bearbeiten </h3>
+				<div class = "card-body">
+					<form th:action="@{/lieferungens/{id} (id=${lieferungen.id})}" th:object = "${lieferungen}" method="POST">
+						<div class ="form-group">
+							<label>Datum</label>
+							<input
+							type = "text"
+							name = "datum"
+							th:field = "*{datum}"
+							class = "form-control"
+							placeholder="Datum Eingeben" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label>Fahrzeug</label>
+							<input
+							type = "text"
+							name = "fahrzeug"
+							th:field = "*{fahrzeug}"
+							class = "form-control"
+							placeholder="Fahrzeug Eingeben" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label>Lieferadresse</label>
+							<input
+							type = "text"
+							name = "lieferadresse"
+							th:field = "*{lieferadresse}"
+							class = "form-control"
+							placeholder="Lieferadresse Eingeben" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label>Gemietet</label>
+							<input
+							type = "text"
+							name = "gemietet"
+							th:field = "*{gemietet}"
+							pattern="^([Tt][Rr][Uu][Ee]|[Ff][Aa][Ll][Ss][Ee])$"
+							title="true/false"
+							class = "form-control"
+							placeholder="Gemietet Eingeben" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label>Uhrzeit</label>
+							<input
+							type = "text"
+							name = "uhrzeit"
+							th:field = "*{uhrzeit}"
+							pattern="^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$"
+							title="23:59"
+							class = "form-control"
+							placeholder="Uhrzeit Eingeben" 
+							/>
+						</div>
+						
+						<div class = "box-footer">
+							<button type="submit" class = "btn btn-primary"> Bestätigen</button>
+							<button type="button" onclick="history.back()" class="btn btn-primary">	Zurück</button>
+						</div>
+					</form>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</section>
+</body>
+</html>
